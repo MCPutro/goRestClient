@@ -151,7 +151,7 @@ func (c *restClientImpl) PutRequest(ctx context.Context, url string, headers map
 }
 
 func (c *restClientImpl) DeleteRequest(ctx context.Context, url string, headers map[string]string, responseBody any) error {
-	req, err := http.NewRequestWithContext(ctx, "DELETE", c.BaseUrl+url, nil)
+	req, err := http.NewRequestWithContext(ctx, http.MethodDelete, c.BaseUrl+url, nil)
 	if err != nil {
 		return err
 	}
